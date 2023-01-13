@@ -31,13 +31,16 @@ body {
 }
 
 .input {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: var(--clr-text-input-field);
 	border: none;
-	border-radius: 8px;
-	height: 30px;
+	border-radius: 15px;
+	height: 40px;
 	font-size: global.$md;
 	color: var(--clr-primary-font);
-	padding: 6px;
+	padding: 10px;
 	margin-bottom: 12px;
 
 	&:focus {
@@ -81,6 +84,7 @@ body {
 	text-align: center;
 	font-size: global.$lg;
 	font-weight: bold;
+	transition: all ease-in 0.3s;
 
 	@media (max-width: 450px) {
 		font-size: global.$md;

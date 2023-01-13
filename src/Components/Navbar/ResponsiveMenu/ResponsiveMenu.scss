@@ -1,0 +1,117 @@
+@use '/src/styles/global.scss' as global;
+
+.open-side-bar-button {
+	width: 35px;
+	height: 40px;
+	background-image: url('/src/assets/icons/icon_menu.svg');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: var(--clr-background);
+	border: none;
+	cursor: pointer;
+}
+
+.sidebar {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 90px 30px;
+	gap: 30px;
+
+	background-color: var(--clr-background);
+	box-shadow: 1px 0px 32px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 1px 0px 32px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 1px 0px 32px 0px rgba(0, 0, 0, 0.75);
+	transform: translate(-100%);
+
+	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	h2 {
+		font-size: global.$lg;
+		font-weight: bold;
+		color: var(--clr-primary-font);
+	}
+
+	nav {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		border: none;
+		box-shadow: none;
+
+		ul {
+			display: flex;
+			align-items: flex-start;
+			gap: 30px;
+			margin: 0;
+			flex-direction: column;
+		}
+
+		.NavLink {
+			text-decoration: none;
+			font-size: global.$lg;
+			font-weight: bold;
+			color: var(--clr-primary-font);
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.NavLink-login {
+			font-size: global.$lg;
+			font-weight: bold;
+			color: var(--clr-green);
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.dark-mode-container {
+		position: relative;
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+.close-side-bar-button {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 20px;
+	height: 20px;
+	background-image: url('/src/assets/icons/icon_close.png');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: var(--clr-background);
+	border: none;
+	cursor: pointer;
+}
+
+.hide-open-side-bar-button {
+	transform: translate(-200);
+}
+
+.show-sidebar {
+	transform: translate(0);
+}

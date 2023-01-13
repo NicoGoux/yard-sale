@@ -1,0 +1,101 @@
+@use '/src/styles/global.scss' as global;
+
+:root.light {
+	@each $shade, $color in map-get(global.$colors, light) {
+		--clr-#{$shade}: #{$color};
+	}
+}
+
+:root.dark {
+	@each $shade, $color in map-get(global.$colors, dark) {
+		--clr-#{$shade}: #{$color};
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	line-height: 24px;
+	font-weight: 400;
+	font-family: 'Quicksand', sans-serif;
+	background-color: var(--clr-background);
+	color: var(--clr-primary-font);
+	transition: all ease-in 0.3s;
+}
+
+body {
+	height: 100vh;
+}
+
+.input {
+	background-color: var(--clr-text-input-field);
+	border: none;
+	border-radius: 8px;
+	height: 30px;
+	font-size: global.$md;
+	color: var(--clr-primary-font);
+	padding: 6px;
+	margin-bottom: 12px;
+
+	&:focus {
+		outline: 3px solid var(--clr-foreground);
+	}
+}
+
+.primary-button {
+	background-color: var(--clr-green);
+	border-radius: 8px;
+	border: none;
+	color: var(--clr-background);
+	width: 100%;
+	cursor: pointer;
+	font-size: global.$md;
+	font-weight: bold;
+	height: 50px;
+}
+
+.login-section-container {
+	margin-top: 20px;
+	width: 100%;
+	height: 80vh;
+	display: grid;
+	place-items: center;
+}
+
+.secondary-button {
+	background-color: var(--clr-background);
+	border-radius: 8px;
+	border: 1px solid var(--clr-green);
+	color: var(--clr-green);
+	width: 100%;
+	cursor: pointer;
+	font-size: global.$md;
+	font-weight: bold;
+	height: 50px;
+}
+
+.title-center {
+	text-align: center;
+	font-size: global.$lg;
+	font-weight: bold;
+
+	@media (max-width: 450px) {
+		font-size: global.$md;
+	}
+}
+
+.text-info {
+	margin-top: 0;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: global.$sm;
+	font-weight: 500;
+	color: var(--clr-very-light-pink);
+}
+
+.background-color-transition {
+	transition: background-color ease-in 0.3s;
+}

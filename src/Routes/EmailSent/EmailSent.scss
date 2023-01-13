@@ -1,0 +1,24 @@
+@use '/src/styles/global.scss' as global;
+
+.resend a {
+	color: var(--clr-green);
+	font-size: global.$sm;
+	text-align: center;
+	text-decoration: none;
+	margin-bottom: 52px;
+}
+
+.email-image {
+	width: 132px;
+	height: 132px;
+	border-radius: 50%;
+	background-color: var(--clr-text-input-field);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 24px;
+	justify-self: center;
+}
+.email-image img {
+	width: 80px;
+}

@@ -1,0 +1,10 @@
+@use '/src/styles/global.scss' as global;
+
+ul {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	list-style: none;
+	padding: 0;
+	height: 60px;
+}

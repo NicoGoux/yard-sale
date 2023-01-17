@@ -1,5 +1,10 @@
 @use '/src/styles/global.scss' as global;
 
+.navbar {
+	position: relative;
+	z-index: 10;
+}
+
 nav {
 	display: flex;
 	align-items: center;
@@ -25,7 +30,7 @@ nav {
 		height: fit-content;
 		gap: 15px;
 		text-align: center;
-		color: var(--clr-very-light-pink);
+		color: var(--clr-light-gray);
 
 		.SwitchButton {
 			position: relative;

@@ -2,6 +2,7 @@ import {NavLink} from 'react-router-dom';
 import './ResponsiveMenu.scss';
 import {useState} from 'react';
 import {SwitchButton} from '../../SwitchButton';
+import {Icon_menu} from '/src/assets/icons/Icon_menu/index.jsx';
 
 function ResponsiveMenu({routes, theme, setTheme, checkboxChecked}) {
 	const [showSideBar, setShowSideBar] = useState(false);
@@ -64,7 +65,9 @@ function ResponsiveMenu({routes, theme, setTheme, checkboxChecked}) {
 			<button
 				className={`open-side-bar-button ${showSideBar && 'hide-open-side-bar-button'}`}
 				onClick={onClickOpenSideBarButton}
-			/>
+			>
+				<Icon_menu></Icon_menu>
+			</button>
 		</>
 	);
 }

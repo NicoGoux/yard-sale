@@ -1,23 +1,40 @@
 import {Bt_add_to_cart} from '../../assets/icons/Bt_add_to_cart';
+import {Bt_added_to_cart} from '/src/assets/icons/Bt_added_to_cart';
 import './Product.scss';
 
-function Product() {
+function Product({product, onClick, cartList, setCartList}) {
+	const onClickAddToCart = () => {
+		setCartList([...cartList, product]);
+	};
+
+	const onClickAddedToCart = () => {
+		let newCartList = [...cartList];
+		newCartList.splice(newCartList.indexOf(product), 1);
+		setCartList(newCartList);
+	};
+
 	return (
 		<div className='product-card'>
-			<div className='product-img-container'>
+			<div className='product-img-container' onClick={onClick}>
 				<img
-					src='https://img.freepik.com/free-vector/black-podium-black-background-realistic-pedestal-dark-background_145391-913.jpg?w=1380&t=st=1673387671~exp=1673388271~hmac=e7c5c5655c1bbdd32ab54c74d3a8c8583bf67bb8112760e55c0adfa939f8fd61'
+					src={product.images[0] ? product.images[0] : product.images[1]}
 					alt='product'
 				/>
 			</div>
 			<div className='product-info-container'>
 				<div className='product-info'>
-					<p className='title-center'>$ 120,00</p>
-					<p className='text-info'>Black cube</p>
+					<p className='title-center'>$ {product.price}</p>
+					<p className='text-info'>{product.title}</p>
 				</div>
-				<button className='add-to-cart'>
-					<Bt_add_to_cart />
-				</button>
+				{cartList.indexOf(product) >= 0 ? (
+					<button className='cart-button' onClick={onClickAddedToCart}>
+						<Bt_added_to_cart />
+					</button>
+				) : (
+					<button className='cart-button' onClick={onClickAddToCart}>
+						<Bt_add_to_cart />
+					</button>
+				)}
 			</div>
 		</div>
 	);

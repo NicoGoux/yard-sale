@@ -37,7 +37,7 @@
 		}
 	}
 
-	.add-to-cart {
+	.cart-button {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -57,7 +57,7 @@
 		}
 
 		&:hover {
-			background-color: var(--clr-very-light-pink);
+			background-color: var(--clr-light-gray);
 		}
 
 		@media (max-width: 450px) {

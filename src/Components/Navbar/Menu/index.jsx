@@ -9,7 +9,7 @@ function Menu({routes}) {
 					<NavLink
 						style={({isActive}) => ({
 							display: 'flex',
-							color: isActive ? 'var(--clr-green)' : 'var(--clr-very-light-pink)',
+							color: isActive ? 'var(--clr-green)' : 'var(--clr-light-gray)',
 							borderStyle: isActive && 'solid',
 							borderRadius: isActive && '20px',
 							padding: '5px 10px',

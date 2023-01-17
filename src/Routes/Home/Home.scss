@@ -25,7 +25,7 @@
 			margin: 0 auto;
 
 			&::placeholder {
-				color: var(--clr-very-light-pink);
+				color: var(--clr-light-gray);
 			}
 		}
 
@@ -35,5 +35,10 @@
 			bottom: 32px;
 			left: 10px;
 		}
+	}
+
+	.home-loading {
+		margin: 0 auto;
+		margin-top: 300px;
 	}
 }

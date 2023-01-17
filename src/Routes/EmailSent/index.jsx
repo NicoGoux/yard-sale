@@ -1,8 +1,14 @@
-import {NavLink} from 'react-router-dom';
+import {NavLink, useNavigate} from 'react-router-dom';
 import {LogoYardSale} from '../../assets/logos/LogoYardSale';
 import './EmailSent.scss';
 
 function EmailSent() {
+	const navigate = useNavigate();
+
+	const onClickButton = () => {
+		navigate('/login');
+	};
+
 	return (
 		<div className='login-section-container'>
 			<div className='form-container'>
@@ -14,10 +20,12 @@ function EmailSent() {
 				<div className='email-image'>
 					<img src='/src/assets/icons/email.svg' alt='email' />
 				</div>
-				<button className='primary-button login-button'>Log in</button>
+				<button className='primary-button login-button' onClick={onClickButton}>
+					Log in
+				</button>
 				<p className='text-info resend'>
 					<span>Didn{`'`}t receive the email?</span>
-					<NavLink to='/recovery/sent'> Resend</NavLink>
+					<NavLink to='/login/recovery/sent'> Resend</NavLink>
 				</p>
 			</div>
 		</div>

@@ -1,3 +1,4 @@
+import {useContext, useEffect, useState} from 'react';
 import {NavLink, useNavigate} from 'react-router-dom';
 import {useMediaQuery} from '/src/Hooks/useMediaQuerys.jsx';
 import {LogoYardSale} from '/src/assets/logos/LogoYardSale';
@@ -5,13 +6,18 @@ import {Menu} from './Menu';
 import {ResponsiveMenu} from './ResponsiveMenu';
 import {SwitchButton} from '../SwitchButton';
 import {Icon_shopping_cart} from '../../assets/icons/Icon_shopping_cart';
-import {useEffect, useState} from 'react';
+import {AppContext} from '../../Context/AppContext';
 import './Navbar.scss';
+import {Icon_shopping_cart_notification} from '../../assets/icons/Icon_shopping_cart_notification';
 
 function Navbar({theme, setTheme}) {
 	const matches = useMediaQuery('(max-width: 860px)');
 
+	const {cartList} = useContext(AppContext);
+
 	const [checkboxChecked, setCheckboxChecked] = useState(false);
+
+	const [showShoppingCart, setShowShoppingCart] = useState(false);
 
 	useEffect(() => {
 		document.documentElement.className = theme;
@@ -23,10 +29,6 @@ function Navbar({theme, setTheme}) {
 	}, [theme]);
 
 	const navigate = useNavigate();
-	const isEmpty = true;
-	const cartLogo = isEmpty
-		? '/src/assets/icons/icon_shopping_cart.svg'
-		: '/src/assets/icons/icon_shopping_cart_notification.svg';
 
 	const onClickDarkModeButton = () => {
 		if (theme === 'light') {
@@ -39,7 +41,7 @@ function Navbar({theme, setTheme}) {
 	};
 
 	return (
-		<header>
+		<header className='navbar'>
 			<nav>
 				{matches && (
 					<ResponsiveMenu
@@ -90,14 +92,25 @@ function Navbar({theme, setTheme}) {
 						</>
 					)}
 
-					<button
-						className='background-color-transition cart-button'
-						onClick={() => {
-							console.log('abrir carrito');
-						}}
-					>
-						<Icon_shopping_cart isEmpty={true} />
-					</button>
+					{cartList.length !== 0 ? (
+						<button
+							className='background-color-transition cart-button'
+							onClick={() => {
+								('abrir carrito');
+							}}
+						>
+							<Icon_shopping_cart_notification isEmpty={true} />
+						</button>
+					) : (
+						<button
+							className='background-color-transition cart-button'
+							onClick={() => {
+								('abrir carrito');
+							}}
+						>
+							<Icon_shopping_cart isEmpty={true} />
+						</button>
+					)}
 				</div>
 			</nav>
 		</header>

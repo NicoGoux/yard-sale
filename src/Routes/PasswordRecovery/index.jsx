@@ -5,7 +5,7 @@ function PasswordRecovery() {
 	const navigate = useNavigate();
 
 	const onSubmit = () => {
-		navigate('/recovery/sent');
+		navigate('/login/recovery/sent');
 	};
 
 	return (
@@ -21,7 +21,7 @@ function PasswordRecovery() {
 					<input
 						type='text'
 						id='email'
-						placeholder='platzi@example.cm'
+						placeholder='platzi@example.com'
 						className='input input-email'
 					/>
 

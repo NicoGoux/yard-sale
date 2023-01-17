@@ -3,10 +3,6 @@
 .open-side-bar-button {
 	width: 35px;
 	height: 40px;
-	background-image: url('/src/assets/icons/icon_menu.svg');
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
 	background-color: var(--clr-background);
 	border: none;
 	cursor: pointer;
@@ -30,6 +26,7 @@
 	-webkit-box-shadow: 1px 0px 32px 0px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 1px 0px 32px 0px rgba(0, 0, 0, 0.75);
 	transform: translate(-100%);
+	z-index: 10;
 
 	overflow-y: scroll;
 	&::-webkit-scrollbar {
@@ -113,5 +110,17 @@
 }
 
 .show-sidebar {
-	transform: translate(0);
+	animation: aside-left-animation 0.3s ease 0s 1 normal forwards;
+}
+
+@keyframes aside-left-animation {
+	0% {
+		opacity: 1;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }

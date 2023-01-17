@@ -1,31 +1,23 @@
-import {NavLink, useNavigate} from 'react-router-dom';
 import {LogoYardSale} from '/src/assets/logos/LogoYardSale';
-import './Login.scss';
 import {useRef} from 'react';
 
-function Login() {
+function CreateAccount() {
 	const form = useRef('');
-	const navigate = useNavigate();
-
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		const formData = new FormData(form.current);
-		const data = {
-			username: formData.get('email'),
-			password: formData.get('password'),
-		};
-		data;
-	};
-
-	const onClickSignUpButton = () => {
-		navigate('/login/create-account');
-	};
 
 	return (
 		<div className='login-section-container'>
 			<div className='form-container'>
 				<LogoYardSale otherClass={'logo-login'}></LogoYardSale>
 				<form className='form' ref={form}>
+					<label htmlFor='email' className='label'>
+						Name
+					</label>
+					<input
+						type='text'
+						name='name'
+						placeholder='name'
+						className='input input-email'
+					/>
 					<label htmlFor='email' className='label'>
 						Email address
 					</label>
@@ -46,21 +38,11 @@ function Login() {
 						className='input input-password'
 					/>
 
-					<input
-						type='submit'
-						value='Log in'
-						className='primary-button login-button'
-						onClick={handleSubmit}
-					/>
-					<NavLink to='/login/recovery'>Forgot my password</NavLink>
+					<input type='submit' value='Create' className='primary-button login-button' />
 				</form>
-
-				<button className='secondary-button signup-button' onClick={onClickSignUpButton}>
-					Sign up
-				</button>
 			</div>
 		</div>
 	);
 }
 
-export {Login};
+export {CreateAccount};

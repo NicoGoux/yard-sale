@@ -22,6 +22,7 @@
 		"@vitejs/plugin-react": "^3.0.0",
 		"eslint": "^8.31.0",
 		"eslint-plugin-react": "^7.31.11",
+		"gh-pages": "^4.0.0",
 		"vite": "^4.0.0"
 	},
 	"description": "yard-sale project for Platzi's course",

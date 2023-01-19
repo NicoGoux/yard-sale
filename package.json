@@ -6,7 +6,9 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d dist"
 	},
 	"dependencies": {
 		"axios": "^1.2.2",
@@ -33,5 +35,6 @@
 		"react-router-6"
 	],
 	"author": "Nicolas Goux <nicolasgoux2000@gmail.com>",
-	"license": "MIT"
+	"license": "MIT",
+	"homepage": "https://nicogoux.github.io/yard-sale"
 }

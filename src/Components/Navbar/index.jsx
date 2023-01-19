@@ -9,7 +9,6 @@ import {Icon_shopping_cart} from '../../assets/icons/Icon_shopping_cart';
 import {AppContext} from '../../Context/AppContext';
 import './Navbar.scss';
 import {Icon_shopping_cart_notification} from '../../assets/icons/Icon_shopping_cart_notification';
-import {ShoppingCart} from '../ShoppingCart';
 
 function Navbar({theme, setTheme}) {
 	const {cartList, showShoppingCart, setShowShoppingCart} = useContext(AppContext);
@@ -112,12 +111,6 @@ function Navbar({theme, setTheme}) {
 					)}
 				</div>
 			</nav>
-			{showShoppingCart && (
-				<ShoppingCart
-					showShoppingCart={showShoppingCart}
-					setShowShoppingCart={setShowShoppingCart}
-				/>
-			)}
 		</header>
 	);
 }

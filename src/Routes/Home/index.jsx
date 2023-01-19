@@ -1,10 +1,12 @@
 import {useContext} from 'react';
 import {Outlet, useSearchParams} from 'react-router-dom';
+import {ShoppingCart} from '../../Components/ShoppingCart';
 import {AppContext} from '../../Context/AppContext';
 import './Home.scss';
 
 function Home() {
-	const {searchValue, setSearchValue} = useContext(AppContext);
+	const {searchValue, setSearchValue, showShoppingCart, setShowShoppingCart} =
+		useContext(AppContext);
 
 	const [params, setParams] = useSearchParams();
 
@@ -38,6 +40,13 @@ function Home() {
 			</p>
 
 			<Outlet />
+
+			{showShoppingCart && (
+				<ShoppingCart
+					showShoppingCart={showShoppingCart}
+					setShowShoppingCart={setShowShoppingCart}
+				/>
+			)}
 		</section>
 	);
 }

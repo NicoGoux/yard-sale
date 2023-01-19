@@ -18,8 +18,8 @@ function App() {
 
 	return (
 		<>
-			<AppProvider>
-				<HashRouter>
+			<HashRouter>
+				<AppProvider>
 					<Navbar theme={theme} setTheme={setTheme} />
 
 					<Routes>
@@ -47,8 +47,8 @@ function App() {
 						<Route path='/product' element={<ProductGrid />}></Route>
 						<Route path='*' element={<NotFound />}></Route>
 					</Routes>
-				</HashRouter>
-			</AppProvider>
+				</AppProvider>
+			</HashRouter>
 		</>
 	);
 }

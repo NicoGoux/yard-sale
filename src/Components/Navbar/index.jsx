@@ -9,15 +9,16 @@ import {Icon_shopping_cart} from '../../assets/icons/Icon_shopping_cart';
 import {AppContext} from '../../Context/AppContext';
 import './Navbar.scss';
 import {Icon_shopping_cart_notification} from '../../assets/icons/Icon_shopping_cart_notification';
+import {ShoppingCart} from '../ShoppingCart';
 
 function Navbar({theme, setTheme}) {
-	const matches = useMediaQuery('(max-width: 860px)');
+	const {cartList, showShoppingCart, setShowShoppingCart} = useContext(AppContext);
 
-	const {cartList} = useContext(AppContext);
+	const navigate = useNavigate();
 
 	const [checkboxChecked, setCheckboxChecked] = useState(false);
 
-	const [showShoppingCart, setShowShoppingCart] = useState(false);
+	const matches = useMediaQuery('(max-width: 860px)');
 
 	useEffect(() => {
 		document.documentElement.className = theme;
@@ -27,8 +28,6 @@ function Navbar({theme, setTheme}) {
 			setCheckboxChecked(false);
 		}
 	}, [theme]);
-
-	const navigate = useNavigate();
 
 	const onClickDarkModeButton = () => {
 		if (theme === 'light') {
@@ -96,7 +95,7 @@ function Navbar({theme, setTheme}) {
 						<button
 							className='background-color-transition cart-button'
 							onClick={() => {
-								('abrir carrito');
+								setShowShoppingCart(!showShoppingCart);
 							}}
 						>
 							<Icon_shopping_cart_notification isEmpty={true} />
@@ -105,7 +104,7 @@ function Navbar({theme, setTheme}) {
 						<button
 							className='background-color-transition cart-button'
 							onClick={() => {
-								('abrir carrito');
+								setShowShoppingCart(!showShoppingCart);
 							}}
 						>
 							<Icon_shopping_cart isEmpty={true} />
@@ -113,6 +112,12 @@ function Navbar({theme, setTheme}) {
 					)}
 				</div>
 			</nav>
+			{showShoppingCart && (
+				<ShoppingCart
+					showShoppingCart={showShoppingCart}
+					setShowShoppingCart={setShowShoppingCart}
+				/>
+			)}
 		</header>
 	);
 }

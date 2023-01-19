@@ -4,7 +4,6 @@ import {Bt_added_to_cart} from '/src/assets/icons/Bt_added_to_cart';
 import './ProductDetail.scss';
 
 function ProductDetail({
-	showProductSideBar,
 	setShowProductSideBar,
 	productDetail,
 	setProductDetail,
@@ -27,7 +26,7 @@ function ProductDetail({
 	};
 
 	return (
-		<aside className={`product-sidebar ${showProductSideBar && 'show-sidebar'}`}>
+		<aside className='product-sidebar'>
 			<DetailImage productDetail={productDetail} images={productDetail.images} />
 			<div className='product-detail-container'>
 				<h2 className='title-center price-text'>$ {productDetail.price}</h2>

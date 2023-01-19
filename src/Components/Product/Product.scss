@@ -1,7 +1,9 @@
 @use '/src/styles/global.scss' as global;
 
 .product-card {
-	width: fit-content;
+	min-width: 100px;
+	width: 100%;
+	max-width: 300px;
 	height: fit-content;
 	border-radius: 30px;
 	margin-bottom: 20px;
@@ -13,9 +15,7 @@
 	height: fit-content;
 	img {
 		aspect-ratio: 1/1;
-		min-width: 100px;
 		width: 100%;
-		max-width: 300px;
 		height: auto;
 		border-radius: 30px;
 		cursor: pointer;

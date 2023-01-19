@@ -7,11 +7,16 @@ import {ProductDetail} from '../ProductDetail';
 import {AppContext} from '../../Context/AppContext';
 
 function ProductGrid({slug}) {
-	const {cartList, setCartList} = useContext(AppContext);
+	const {
+		cartList,
+		setCartList,
+		searchValue,
+		setSearchValue,
+		showProductSideBar,
+		setShowProductSideBar,
+	} = useContext(AppContext);
 
 	const [productDetail, setProductDetail] = useState(null);
-
-	const [showProductSideBar, setShowProductSideBar] = useState(false);
 
 	const {products, loading} = useGetProducts(slug);
 
@@ -24,8 +29,8 @@ function ProductGrid({slug}) {
 	}, [productDetail]);
 
 	useEffect(() => {
-		console.log(cartList);
-	}, [cartList]);
+		setSearchValue('');
+	}, [slug]);
 
 	const onClickProductCard = (product) => {
 		setProductDetail(product);
@@ -46,15 +51,19 @@ function ProductGrid({slug}) {
 			) : (
 				<>
 					<div className='ProductGrid'>
-						{products.map((product) => (
-							<Product
-								key={product.id}
-								product={product}
-								onClick={() => onClickProductCard(product)}
-								cartList={cartList}
-								setCartList={setCartList}
-							/>
-						))}
+						{products
+							.filter((product) =>
+								product.title.toLowerCase().includes(searchValue.toLowerCase())
+							)
+							.map((product) => (
+								<Product
+									key={product.id}
+									product={product}
+									onClick={() => onClickProductCard(product)}
+									cartList={cartList}
+									setCartList={setCartList}
+								/>
+							))}
 					</div>
 					{showProductSideBar && (
 						<ProductDetail

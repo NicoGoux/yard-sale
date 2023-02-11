@@ -1,5 +1,6 @@
 import {NavLink, useNavigate} from 'react-router-dom';
-import {LogoYardSale} from '../../assets/logos/LogoYardSale';
+import {LogoYardSale} from '/src/assets/logos/LogoYardSale';
+import {Icon_email} from '/src/assets/icons/Icon_email';
 import './EmailSent.scss';
 
 function EmailSent() {
@@ -18,7 +19,7 @@ function EmailSent() {
 					Please check your inbox for instructions on how to reset the password
 				</p>
 				<div className='email-image'>
-					<img src='/src/assets/icons/email.svg' alt='email' />
+					<Icon_email />
 				</div>
 				<button className='primary-button login-button' onClick={onClickButton}>
 					Log in

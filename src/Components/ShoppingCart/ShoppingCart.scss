@@ -35,6 +35,8 @@
 	}
 
 	.x-button {
+		width: 30px;
+		height: 20px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -68,6 +70,7 @@
 		.shopping-cart-product-image {
 			aspect-ratio: 1/1;
 			width: 80px;
+			height: 80px;
 			margin-right: 20px;
 
 			img {

@@ -1,4 +1,5 @@
 import {useContext} from 'react';
+import {Icon_close} from '../../assets/icons/Icon_close';
 import {AppContext} from '../../Context/AppContext';
 import './ShoppingCart.scss';
 
@@ -21,7 +22,7 @@ function ShoppingCart({setShowShoppingCart}) {
 		<aside className='shopping-cart-sidebar'>
 			<div className='shopping-cart-title-container'>
 				<button className='x-button' onClick={onClickCloseSideBarButton}>
-					<img src='/src/assets/icons/icon_close.png' alt='close-button' />
+					<Icon_close />
 				</button>
 				<h2>Shopping cart</h2>
 			</div>
@@ -44,10 +45,7 @@ function ShoppingCart({setShowShoppingCart}) {
 									className='x-button'
 									onClick={() => onClickRemoveProduct(product)}
 								>
-									<img
-										src='/src/assets/icons/icon_close.png'
-										alt='remove-button'
-									/>
+									<Icon_close />
 								</button>
 							</div>
 						);

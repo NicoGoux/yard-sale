@@ -1,15 +1,15 @@
-import {HashRouter, Navigate, Route, Routes} from 'react-router-dom';
-import {Home} from './Home';
-import {Login} from './Login';
-import {NotFound} from './NotFound';
-import {Navbar} from '../Components/Navbar';
-import {PasswordRecovery} from './PasswordRecovery';
-import {EmailSent} from './EmailSent';
-import {NewPassword} from './NewPassword';
-import {ProductGrid} from '../Components/ProductGrid';
-import {useState} from 'react';
-import {AppProvider} from '../Context/AppContext';
-import {CreateAccount} from './CreateAccount';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { Home } from './Home';
+import { Login } from './Login';
+import { NotFound } from './NotFound';
+import { Navbar } from '../Components/Navbar';
+import { PasswordRecovery } from './PasswordRecovery';
+import { EmailSent } from './EmailSent';
+import { NewPassword } from './NewPassword';
+import { ProductGrid } from '../Components/ProductGrid';
+import { useState } from 'react';
+import { AppProvider } from '../Context/AppContext';
+import { CreateAccount } from './CreateAccount';
 
 function App() {
 	const [theme, setTheme] = useState(

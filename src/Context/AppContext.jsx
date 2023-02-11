@@ -1,4 +1,4 @@
-import {createContext, useEffect, useState} from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 const AppContext = createContext({});
 
@@ -41,4 +41,4 @@ function AppProvider(props) {
 	);
 }
 
-export {AppContext, AppProvider};
+export { AppContext, AppProvider };

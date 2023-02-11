@@ -2,6 +2,7 @@ import {DetailImage} from '../DetailImage';
 import {Bt_add_to_cart} from '/src/assets/icons/Bt_add_to_cart';
 import {Bt_added_to_cart} from '/src/assets/icons/Bt_added_to_cart';
 import './ProductDetail.scss';
+import {Icon_close} from '../../assets/icons/Icon_close';
 
 function ProductDetail({
 	setShowProductSideBar,
@@ -53,7 +54,7 @@ function ProductDetail({
 			</div>
 
 			<button className='close-detail-button' onClick={onClickCloseSideBarButton}>
-				<img src='/src/assets/icons/icon_close.png' alt='close-button' />
+				<Icon_close />
 			</button>
 		</aside>
 	);

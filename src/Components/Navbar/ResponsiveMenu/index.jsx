@@ -3,6 +3,7 @@ import './ResponsiveMenu.scss';
 import {useState} from 'react';
 import {SwitchButton} from '../../SwitchButton';
 import {Icon_menu} from '/src/assets/icons/Icon_menu/index.jsx';
+import {Icon_close} from '../../../assets/icons/Icon_close';
 
 function ResponsiveMenu({routes, theme, setTheme, checkboxChecked}) {
 	const [showSideBar, setShowSideBar] = useState(false);
@@ -28,7 +29,9 @@ function ResponsiveMenu({routes, theme, setTheme, checkboxChecked}) {
 	return (
 		<>
 			<aside className={`sidebar ${showSideBar && 'show-sidebar'}`}>
-				<button className='close-side-bar-button' onClick={onClickCloseSideBarButton} />
+				<button className='close-side-bar-button' onClick={onClickCloseSideBarButton}>
+					<Icon_close />
+				</button>
 				<h2>CATEGORIES</h2>
 				<nav>
 					<ul>

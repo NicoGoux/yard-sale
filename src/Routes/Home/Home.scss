@@ -10,6 +10,7 @@
 	@media (max-width: 830px) {
 		padding: 20px 10px;
 	}
+
 	.search-input-container {
 		display: flex;
 		flex-direction: column;
@@ -31,8 +32,31 @@
 		.search-icon {
 			position: relative;
 			width: 25px;
+			height: 25px;
 			bottom: 32px;
 			left: 10px;
+		}
+	}
+
+	.order-text-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		gap: 10px;
+
+		.arrow-container {
+			width: 20px;
+			height: 20px;
+			display: flex;
+			align-items: center;
+
+			justify-content: center;
+			cursor: pointer;
+
+			.rotate {
+				transform: rotate(180deg);
+			}
 		}
 	}
 

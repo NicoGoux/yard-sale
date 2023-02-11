@@ -20,7 +20,7 @@ function Home() {
 
 	const onSearchInputChange = (event) => {
 		setSearchValue(event.target.value);
-		setParams({ search: event.target.value, pedrito: event.target.value });
+		setParams({ search: event.target.value });
 	};
 
 	return (
